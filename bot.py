@@ -21,6 +21,9 @@ def keep_alive():
 TOKEN = "8877074707:AAH_Jlknum7R9aTQo6WWO91nCAozW2jBR7I"
 bot = TeleBot(TOKEN)
 
+# To'g'ri GitHub Pages Web App havolasi
+web_app_url = "https://sunnatovasaida8-blip.github.io/namoz-vaqtlariai/"
+
 JOYLAR = {
     "Pastdarg'om": {"lat": 39.560, "lon": 66.692},
     "Ishtixon": {"lat": 39.966, "lon": 66.486},
@@ -33,8 +36,6 @@ def start(message):
     for joy in JOYLAR.keys():
         markup.add(KeyboardButton(joy))
     
-    # Web App ochadigan inline tugma
-    web_app_url = "https://sunnatovasaida8-blip.github.io/namoz-vaqtlari-toza/"
     inline_markup = InlineKeyboardMarkup()
     inline_markup.add(InlineKeyboardButton("📱 Namoz Vaqtlari (Web App)", web_app=WebAppInfo(url=web_app_url)))
     
@@ -73,4 +74,3 @@ def send_namoz_vaqtlari(message):
 if __name__ == "__main__":
     keep_alive()
     bot.infinity_polling()
-
